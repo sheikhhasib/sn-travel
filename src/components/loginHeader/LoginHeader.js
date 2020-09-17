@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, Nav, Navbar } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import logo from '../images/Logo.png';
 const LoginHeader = () => {
     return (
@@ -10,7 +11,7 @@ const LoginHeader = () => {
                 <Navbar.Collapse id="basic-navbar-nav">
                     
                     <Nav className="ml-auto">
-                        <Nav.Link className="mx-4 text-dark"> <strong>News</strong></Nav.Link>
+                        <Nav.Link className="mx-4 text-dark"> <strong><Link to="/">News</Link></strong></Nav.Link>
                         <Nav.Link className="mx-4 text-dark"><strong>Destination</strong></Nav.Link>
                         <Nav.Link className="mx-4 text-dark"><strong>Blog</strong></Nav.Link>
                         <Nav.Link className="mx-4 text-dark"><strong>Contact</strong></Nav.Link>

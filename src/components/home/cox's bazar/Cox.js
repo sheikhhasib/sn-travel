@@ -11,7 +11,7 @@ import './Cox.css';
 import citydetails from '../../fakedata/citydetails';
 import Booking from '../../Booking/Booking';
 
-const Cox = () => {
+const Cox = (props) => {
     const [cities,setCities] = useState(citydetails);
     const [singleCity,setSingleCity] = useState({});
     const [clicked,setClicked] = useState(false);
@@ -22,6 +22,7 @@ const Cox = () => {
     const handleCity = (city,isClick) =>{
         setSingleCity(city);
         setClicked(isClick);
+        props.setCity(city)
     }
     
     return (

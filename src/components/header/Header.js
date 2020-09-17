@@ -17,9 +17,9 @@ const Header = () => {
                         <FormControl type="text"  style={{paddingLeft:'35px',width:'100%', backgroundColor:'rgba(255, 255, 255, 0.2)',color:'white'}} placeholder="Search your destiny" className="mr-sm-2"/>
                     </Form>
                     <Nav className="ml-auto">
-                    <Link to="/news" className="text-decoration-none">
-                    <Nav.Link  className="mx-4 text-light"><strong>News</strong></Nav.Link>
-                    </Link>
+                    
+                    <Nav.Link  className="mx-4 "><strong><Link to="/" className="text-decoration-none text-light">News</Link></strong></Nav.Link>
+                    
                     <Link to="/destination" className="text-decoration-none">
                     <Nav.Link  className="mx-4 text-light"><strong>Destination</strong></Nav.Link>
                     </Link>
