@@ -6,19 +6,6 @@
     font-family: 'Montserrat', sans-serif;
     margin-top: 5%;
 }
-.cox{
-    background-image:url('../../images/Image/Rectangle.png');
-    background-size: cover;
-    border: 2px solid rgb(240, 186, 12);
-}
-.sreemangal{
-    background-image:url('../../images/Image/Sreemongol.png');
-    background-size: cover;
-}
-.sundarbans{
-    background-image:url('../../images/Image/sundorbon.png');
-    background-size: cover;
-}
 
 .slider{
     height:420px;

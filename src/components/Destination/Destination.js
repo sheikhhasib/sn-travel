@@ -82,7 +82,7 @@ const Destination = (props) => {
                         </div>
                     </div>
                     <div className="col-md-5">
-                        <GoogleMaps city={props.city}></GoogleMaps>
+                        {/* <GoogleMaps city={props.city}></GoogleMaps> */}
                     </div>
                 </div>
             </div>

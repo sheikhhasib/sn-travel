@@ -4,12 +4,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 import { faArrowCircleRight } from '@fortawesome/free-solid-svg-icons'
 import { faArrowCircleLeft } from '@fortawesome/free-solid-svg-icons'
-import cox from '../../images/Image/Rectangle.png'
-import sreemangal from '../../images/Image/Sreemongol.png'
-import sundarbon from '../../images/Image/sundorbon.png'
-import './Cox.css';
-import citydetails from '../../fakedata/citydetails';
-import Booking from '../../Booking/Booking';
+import cox from '../images/Image/Rectangle.png'
+import sreemangal from '../images/Image/Sreemongol.png'
+import sundarbon from '../images/Image/sundorbon.png'
+import './Slider.css';
+
+import Booking from '../Booking/Booking';
+import citydetails from '../fakedata/citydetails';
+
 
 const Cox = (props) => {
     const [cities,setCities] = useState(citydetails);
@@ -60,7 +62,7 @@ const Cox = (props) => {
             </div>
         </div>
         {
-            clicked === false && <div className="text-center text-light" style={{fontSize:'30px',marginTop:'100px'}}>
+            clicked === false && <div className="text-center text-light" style={{fontSize:'30px',marginTop:'100px',paddingBottom:'12%'}}>
                                     <FontAwesomeIcon className="mx-2" icon={faArrowCircleLeft}  />
                                     <FontAwesomeIcon className="mx-2" icon={faArrowCircleRight} />
                                 </div>

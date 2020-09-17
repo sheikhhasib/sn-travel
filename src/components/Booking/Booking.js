@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Booking = () => {
     return (
-        <>
+        <div style={{paddingBottom:'70%'}}>
             <Card border="primary" style={{ width: '100%', padding: '4%'}}>
                 <Card.Body>
                     <Form>
@@ -41,8 +41,7 @@ const Booking = () => {
                     </Form>
                 </Card.Body>
             </Card>
-            <br />
-        </>
+        </div>
     );
 };
 

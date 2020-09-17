@@ -36,9 +36,9 @@ function App() {
             <Register></Register>
             <FbAndGmailSignIn></FbAndGmailSignIn>
           </Route>
-          <Route path="/destination">
+          <PrivateRoute path="/destination">
             <Destination city={city}></Destination>
-          </Route>
+          </PrivateRoute>
           <Route exact path="/">
             <Header></Header>
             <Home setCity={setCity}></Home>

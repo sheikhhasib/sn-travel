@@ -1,11 +1,11 @@
 import React from 'react';
-import Cox from './cox\'s bazar/Cox';
+import Slider from '../Slider/Slider'
 import './Home.css';
 const Home = (props) => {
     return (
         <div className="homeBackground">
             <div className="main-content">
-               <Cox setCity={props.setCity}></Cox>
+               <Slider setCity={props.setCity}></Slider>
             </div>
         </div>
     );
