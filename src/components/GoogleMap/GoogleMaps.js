@@ -1,18 +1,33 @@
-// import React from 'react';
-// import { GoogleMap ,withScriptjs,withGoogleMap} from 'google-maps-react';
+import React from 'react';
+import {
+  withScriptjs,
+  withGoogleMap,
+  GoogleMap,
+  Marker,
+} from "react-google-maps";
 
+class GoogleMaps extends React.Component {
+  render() {
+    const MapWithAMarker = withScriptjs(withGoogleMap(props =>
+      <GoogleMap
+        defaultZoom={8}
+        defaultCenter={{ lat: -34.397, lng: 150.644 }}
+      >
+        <Marker
+          position={{ lat: -34.397, lng: 150.644 }}
+        />
+      </GoogleMap>
+    ));
+    return (
+      <MapWithAMarker
+      googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOLqg6-rAS69TDeAo3AW-RHIadO1CKCP8&v=3.exp&libraries=geometry,drawing,places"
+      loadingElement={<div style={{ height: `100%` }} />}
+      containerElement={<div style={{ height: `600px` }} />}
+      mapElement={<div style={{ height: `100%` }} />}
+    />
 
-// function Map () {
-//     return <GoogleMap defalutZoom={10} 
-//     defaultCenter={{ lat:45.421532 ,lng:-75.697189 }}
-//      />
-// }
-// const WrappedMap = withScriptjs(withGoogleMap(Map))
-// const GoogleMaps = (props) => {
-//     return (
-//         <div>
-//             <WrappedMap googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places`} />
-//         </div>
-//     );
-// };
-// export default GoogleMaps;
+    );
+  }
+}
+
+export default GoogleMaps;
