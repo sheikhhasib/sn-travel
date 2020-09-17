@@ -3,7 +3,7 @@ import { Button, Card, Form } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import { Link, useHistory, useLocation } from 'react-router-dom';
 import { UserContext } from '../../App';
-import { initializeLoginFramework, signInwithEmailAndPassword } from './SignInMethods';
+import { handleSignOut, initializeLoginFramework, resetPasswords, signInwithEmailAndPassword } from './SignInMethods';
 
 const Login = () => {
     const [user, setUser] = useState({
@@ -32,8 +32,6 @@ const Login = () => {
             }
         e.preventDefault();
       }
-
-
       const handleBlur = (e) => {
         let isFieldValid = true;
         if (e.target.name === 'email') {
@@ -74,7 +72,7 @@ const Login = () => {
                                     />
                                 </Form.Group>
                                 <Form.Group>
-                                    <Link to="/" style={{ color: '#F9A51A' }}>Forgot Password</Link>
+                                    <a href="#" onClick={()=>resetPasswords(user.email)} style={{ color: '#F9A51A'}} >Forgot Password</a>
                                 </Form.Group>
                             </div>
                             <Button className="mt-5 rounded-0" style={{ width: '100%', backgroundColor: '#F9A51A', color: 'black' }} type="submit">

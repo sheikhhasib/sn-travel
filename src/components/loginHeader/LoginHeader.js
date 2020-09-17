@@ -1,8 +1,32 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { Button, Nav, Navbar } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useHistory, useLocation } from 'react-router-dom';
+import { UserContext } from '../../App';
 import logo from '../images/Logo.png';
+import { handleSignOut, initializeLoginFramework } from '../Login/SignInMethods';
 const LoginHeader = () => {
+    const [user, setUser] = useState({
+        isSignedIn: false,
+        name: '',
+        email: '',
+        password: '',
+        photo: '',
+        error: '',
+        success: false
+      });
+      initializeLoginFramework();
+      const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+      const history = useHistory();
+      const location = useLocation();
+      let { from } = location.state || { from: { pathname: "/" } };
+    const signOut = () =>{
+        handleSignOut()
+        .then(res => {
+          setUser(res);
+          setLoggedInUser(res);
+          history.replace(from);
+        })
+    }
     return (
         <>
              <Navbar expand="lg" style={{margin: '0% 9%'}} fixed="top">
@@ -12,10 +36,13 @@ const LoginHeader = () => {
                     
                     <Nav className="ml-auto">
                         <Nav.Link className="mx-4 text-dark"> <strong><Link to="/">News</Link></strong></Nav.Link>
-                        <Nav.Link className="mx-4 text-dark"><strong>Destination</strong></Nav.Link>
+                        <Nav.Link className="mx-4 text-dark"><strong><Link to="/destination">Destination</Link></strong></Nav.Link>
                         <Nav.Link className="mx-4 text-dark"><strong>Blog</strong></Nav.Link>
                         <Nav.Link className="mx-4 text-dark"><strong>Contact</strong></Nav.Link>
-                        <Button style={{backgroundColor:'#F9A51A',color:'black'}} className="px-5 mx-5"><strong>Login</strong></Button>
+                        {
+                            loggedInUser.email ? <Button onClick={signOut} style={{backgroundColor:'#F9A51A',color:'black'}} className="px-5 mx-5"><strong>Sign out</strong></Button> :
+                            <Button style={{backgroundColor:'#F9A51A',color:'black'}} className="px-5 mx-5"><strong>Login</strong></Button>
+                        } 
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>  

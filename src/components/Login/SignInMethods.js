@@ -58,20 +58,21 @@ export const handleFBSignIn = () => {
 
 //user name and password login
 export const createSignInWithEmailAndPassword = (name, email, password) => {
-    return firebase.auth().createUserWithEmailAndPassword(email, password)
-    .then(res =>{
-        const newUserInfo = res.user;
-        newUserInfo.error = '';
-        newUserInfo.success = true;
-        updateUserName(name);
-        console.log(newUserInfo);
-      })
-      .catch((error) => {
-        const newUserInfo = {};
-        newUserInfo.error = error.message;
-        newUserInfo.success = false;
-        return newUserInfo;
-      });
+  return firebase.auth().createUserWithEmailAndPassword(email, password)
+  .then(res => {
+    const newUserInfo = res.user;
+    newUserInfo.error = '';
+    newUserInfo.success = true;
+    updateUserName(name);
+    varifyEmail();
+    return newUserInfo;
+  })
+  .catch((error) => {
+    const newUserInfo = {};
+    newUserInfo.error = error.message;
+    newUserInfo.success = false;
+    return newUserInfo;
+  });
 }
 
 export const signInwithEmailAndPassword = (email,password) =>{
@@ -99,5 +100,39 @@ const updateUserName = name =>{
       console.log('user name updated successfully');
     }).catch(function(error) {
       console.log(error);
+    });
+  }
+
+  export const handleSignOut = () => {
+    return firebase.auth().signOut()
+      .then(res => {
+        const signOutUser = {
+          isSignedIn: false,
+          name: '',
+          email: '',
+          photo: ''
+        }
+        return signOutUser;
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }
+
+  export const resetPasswords =(email) =>{
+    let auth = firebase.auth();    
+    auth.sendPasswordResetEmail(email).then(function() {
+      // Email sent.
+    }).catch(function(error) {
+      // An error happened.
+    });
+  }
+
+  const varifyEmail = () => {
+    var user = firebase.auth().currentUser;
+    user.sendEmailVerification().then(function () {
+  
+    }).catch(function (error) {
+  
     });
   }

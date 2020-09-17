@@ -3,7 +3,7 @@ import { Button, Card, Form } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import { Link, useHistory, useLocation } from 'react-router-dom';
 import { UserContext } from '../../App';
-import { createSignInWithEmailAndPassword, initializeLoginFramework, signInwithEmailAndPassword } from '../Login/SignInMethods';
+import { createSignInWithEmailAndPassword, initializeLoginFramework } from '../Login/SignInMethods';
 
 const Register = () => {
 
@@ -17,14 +17,6 @@ const Register = () => {
         error: '',
         success: false
     });
-    const [testUser, setTestUser] = useState({
-        name: '',
-        email: '',
-        password: '',
-        confirmPassword:'',
-        photo: '',
-    });
-    const [validationError,setValidationError] = useState();
     initializeLoginFramework();
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const history = useHistory();
@@ -32,15 +24,14 @@ const Register = () => {
     let { from } = location.state || { from: { pathname: "/" } };
 
     const handleSubmit = (e) => {
-        if (user.email && user.password) {
-            if(user.email && user.password){
-                createSignInWithEmailAndPassword(user.firstname+user.lastname, user.email, user.password)
-                .then(res => {
-                    setUser(res);
-                    setLoggedInUser(res);
-                    history.replace(from);
-                })
-            }
+        if(user.email && user.password){
+            const name = user.firstname+' '+user.lastname;
+            createSignInWithEmailAndPassword(name, user.email, user.password)
+            .then(res => {
+                setUser(res);
+                setLoggedInUser(res);
+            })
+            
         }
         e.preventDefault();
       }
@@ -82,25 +73,25 @@ const Register = () => {
                         <Card.Title>Create an account</Card.Title>
                         <Form onSubmit={handleSubmit} className="mt-5">
                             <Form.Group controlId="formBasicEmail">
-                                <Form.Control type="text" onChange={handleBlur} name="firstname" style={{ border: 'none', borderBottom: '1px solid gray' }} placeholder="first name"  required/>
+                                <Form.Control type="text" onBlur={handleBlur} name="firstname" style={{ border: 'none', borderBottom: '1px solid gray' }} placeholder="first name"  required/>
                             </Form.Group>
                             <Form.Group className="mt-4" controlId="formBasicPassword">
-                                <Form.Control type="text" onChange={handleBlur} name="lastname" style={{ border: 'none', borderBottom: '1px solid gray' }} placeholder="last name" required />
+                                <Form.Control type="text" onBlur={handleBlur} name="lastname" style={{ border: 'none', borderBottom: '1px solid gray' }} placeholder="last name" required />
                             </Form.Group>
                             <Form.Group className="mt-4" controlId="formBasicPassword">
-                                <Form.Control type="email" onChange={handleBlur} name="email" style={{ border: 'none', borderBottom: '1px solid gray' }} placeholder="Username or Password" required />
+                                <Form.Control type="email" onBlur={handleBlur} name="email" style={{ border: 'none', borderBottom: '1px solid gray' }} placeholder="Username or Password" required />
                             </Form.Group>
                             <Form.Group className="mt-4" controlId="formBasicPassword">
-                                <Form.Control type="password" onChange={handleBlur} name="password" style={{ border: 'none', borderBottom: '1px solid gray' }} placeholder="Password" required />
+                                <Form.Control type="password" onBlur={handleBlur} name="password" style={{ border: 'none', borderBottom: '1px solid gray' }} placeholder="Password" required />
                             </Form.Group>
                             <Form.Group className="mt-4" controlId="formBasicPassword">
-                                <Form.Control type="password" onChange={handleBlur} name="confirmPassword" style={{ border: 'none', borderBottom: '1px solid gray' }} placeholder="Confirm Password" required />
+                                <Form.Control type="password" onBlur={handleBlur} name="confirmPassword" style={{ border: 'none', borderBottom: '1px solid gray' }} placeholder="Confirm Password" required />
                             </Form.Group>
-                            <Form.Text className="text-danger">
-                            </Form.Text>
                             <Button className="mt-4 rounded-0" style={{ width: '100%', backgroundColor: '#F9A51A', color: 'black' }} type="submit">
                                 Create an Account
                             </Button>
+                            
+
                             <Form.Text className="text-center mt-3" style={{ fontSize: '17px' }}>
                                 Already have account?<Link to="/login" style={{ color: '#F9A51A' }}>Login</Link>
                             </Form.Text>

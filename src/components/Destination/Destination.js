@@ -3,6 +3,9 @@ import LoginHeader from '../loginHeader/LoginHeader';
 import hotelImage1 from '../images/Image/Rectangle26.png'
 import hotelImage2 from '../images/Image/Rectangle27.png'
 import hotelImage3 from '../images/Image/Rectangle28.png'
+import cox from '../images/map/coxbazar.PNG'
+import sreemangal from '../images/map/sreemangal.PNG'
+import sundarban from '../images/map/sundarban.PNG'
 import star from '../images/Icon/star_1_.png'
 import GoogleMaps from '../GoogleMap/GoogleMaps';
 
@@ -82,7 +85,15 @@ const Destination = (props) => {
                         </div>
                     </div>
                     <div className="col-md-5">
-                        {/* <GoogleMaps city={props.city}></GoogleMaps> */}
+                        {
+                            props.city.name == "COX'S BAZAR" ? <img src={cox} width="90%" style={{borderRadius:'5px'}} alt=""/> : ''
+                        }
+                        {
+                            props.city.name == "SREEMANGAL" ? <img src={sreemangal} width="90%" style={{borderRadius:'5px'}} alt=""/> : ''
+                        }
+                        {
+                            props.city.name == "SUNDARBANS" ? <img src={sundarban} width="90%" style={{borderRadius:'5px'}} alt=""/> : ''
+                        }
                     </div>
                 </div>
             </div>
