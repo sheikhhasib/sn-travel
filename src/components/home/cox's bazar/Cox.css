@@ -1,0 +1,33 @@
+.banner-text h1{
+    font-family: 'Russo One', sans-serif;
+    font-size:70px;
+}
+.banner-text p{
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 5%;
+}
+.cox{
+    background-image:url('../../images/Image/Rectangle.png');
+    background-size: cover;
+    border: 2px solid rgb(240, 186, 12);
+}
+.sreemangal{
+    background-image:url('../../images/Image/Sreemongol.png');
+    background-size: cover;
+}
+.sundarbans{
+    background-image:url('../../images/Image/sundorbon.png');
+    background-size: cover;
+}
+
+.slider{
+    height:420px;
+    border-radius: 30px;
+    
+    font-family: 'Russo One', sans-serif;
+    text-align: center;
+    color: #fff;
+}
+.slider:hover{
+    border: 2px solid rgb(24, 131, 253);
+}
