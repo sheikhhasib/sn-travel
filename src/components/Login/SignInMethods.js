@@ -56,7 +56,7 @@ export const handleFBSignIn = () => {
 
 
 
-//user name and password login
+//user name and password create account
 export const createSignInWithEmailAndPassword = (name, email, password) => {
   return firebase.auth().createUserWithEmailAndPassword(email, password)
   .then(res => {
@@ -75,6 +75,7 @@ export const createSignInWithEmailAndPassword = (name, email, password) => {
   });
 }
 
+//login function
 export const signInwithEmailAndPassword = (email,password) =>{
     return firebase.auth().signInWithEmailAndPassword(email, password)
     .then(res =>{
@@ -88,6 +89,7 @@ export const signInwithEmailAndPassword = (email,password) =>{
         const newUserInfo = {};
         newUserInfo.error = error.message;
         newUserInfo.success = false;
+        alert(error.message);
         return(newUserInfo);
       });
 }
