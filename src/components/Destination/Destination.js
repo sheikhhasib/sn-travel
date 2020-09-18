@@ -8,6 +8,7 @@ import GoogleMaps from '../GoogleMap/GoogleMaps';
 
 
 const Destination = (props) => {
+    const cityName = props.city ? props.city.name : '';
     return (
         <>
             <LoginHeader></LoginHeader>
@@ -82,7 +83,7 @@ const Destination = (props) => {
                         </div>
                     </div>
                     <div className="col-md-5">
-                        <GoogleMaps></GoogleMaps>
+                        <GoogleMaps cityName={cityName}></GoogleMaps>
                     </div>
                 </div>
             </div>
