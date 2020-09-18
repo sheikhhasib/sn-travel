@@ -35,8 +35,8 @@ const LoginHeader = () => {
                 <Navbar.Collapse id="basic-navbar-nav">
                     
                     <Nav className="ml-auto">
-                        <Nav.Link className="mx-4 text-dark"> <strong><Link to="/">News</Link></strong></Nav.Link>
-                        <Nav.Link className="mx-4 text-dark"><strong><Link to="/destination">Destination</Link></strong></Nav.Link>
+                        <Nav.Link className="mx-4 text-dark"> <strong><Link to="/" className="text-light">News</Link></strong></Nav.Link>
+                        <Nav.Link className="mx-4 text-dark"><strong><Link to="/destination" className="text-light">Destination</Link></strong></Nav.Link>
                         <Nav.Link className="mx-4 text-dark"><strong>Blog</strong></Nav.Link>
                         <Nav.Link className="mx-4 text-dark"><strong>Contact</strong></Nav.Link>
                         {

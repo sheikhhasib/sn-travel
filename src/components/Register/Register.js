@@ -84,7 +84,7 @@ const Register = () => {
                                 <Form.Control type="text" onBlur={handleBlur} name="lastname" style={{ border: 'none', borderBottom: '1px solid gray' }} placeholder="last name" required />
                             </Form.Group>
                             <Form.Group className="mt-4" controlId="formBasicPassword">
-                                <Form.Control type="email" onBlur={handleBlur} name="email" style={{ border: 'none', borderBottom: '1px solid gray' }} placeholder="Username or Password" required />
+                                <Form.Control type="email" onBlur={handleBlur} name="email" style={{ border: 'none', borderBottom: '1px solid gray' }} placeholder="Username or Email" required />
                             </Form.Group>
                             <Form.Group className="mt-4" controlId="formBasicPassword">
                                 <Form.Control type="password" onBlur={handleBlur} name="password" style={{ border: 'none', borderBottom: '1px solid gray' }} placeholder="Password" required />
