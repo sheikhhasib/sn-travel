@@ -6,7 +6,7 @@ Travel gurus are basically made for travelers. Many people who are thirsty for t
 	if you not login user please login and select your room.
 	There also added google map you can see location when you want to visit .
 	There I also uses firebase authentication system so don’t warry your info hosted very safe please. 
-
+### `Uses technology `  React ,React Router ,Context Api, React  Bootstrap ,Google map  ,firebase authentication ,firebase  etc
 ### `live site link `
 click here  https://sn-travel.web.app/
 ### `visit my resume `
