@@ -3,7 +3,7 @@ Travel gurus are basically made for travelers. Many people who are thirsty for t
 ### `Project features `
 	Travel guru help to get you better hotel , this site have three different places for visit .
 	Home page have three places  card any one click and give their address and time schedule then click start booking .
-if you not login user please login and select your room.
+	if you not login user please login and select your room.
 	There also added google map you can see location when you want to visit .
 	There I also uses firebase authentication system so don’t warry your info hosted very safe please. 
 
